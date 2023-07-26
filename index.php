@@ -43,6 +43,7 @@ $user_avatar = 'img/user.jpg';
                 <a href="#">Вход</a> 
             </li> 
         </ul>
+        <?php endif; ?>
         </nav>
     </div>
 </header>
