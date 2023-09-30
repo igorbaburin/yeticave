@@ -2,9 +2,10 @@
 
 // Шаблонизатор
 
-function getTemplate(string $template, array $data) {
-    $pathTemplate = __DIR__. '../templates/' . $template;
-    if(empty($template || !file_exists($pathTemplate))) {
+function getTemplate(string $template, array $data)
+{
+    $pathTemplate = __DIR__ . '../templates/' . $template;
+    if (empty($template || !file_exists($pathTemplate))) {
         return '';
     }
 
@@ -16,11 +17,11 @@ function getTemplate(string $template, array $data) {
     return ob_get_clean();
 }
 
-
 // Вывод таймера для товаров
 
-function timeUntilMidnight() {
-    
+function timeUntilMidnight()
+{
+
     // Получаем текущую дату и время
     $currentTime = time();
 

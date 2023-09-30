@@ -4,9 +4,9 @@ require_once ('data.php');
 
 $is_auth = (bool) rand(0, 1);
 $user_name= 'Константин';
-$ser_avatar = 'img/user.jpg';
+$user_avatar = 'img/user.jpg';
 
-$page_content = getTemplate('index.php', ['goods' => $goods, 'timeLeft' => $timeLeft]);
+$page_content = getTemplate('index.php', ['goods' => $goods, 'timeLeft' => $timeLeft],);
 $page = getTemplate(
     'layout.php', [
     'title' => 'Главная',
