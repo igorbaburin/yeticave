@@ -14,7 +14,7 @@ $page = getTemplate(
     'user_name' => $user_name,
     'user_avatar' => $user_avatar,
     'content' => $page_content,
-    'category' => $category,
+    'categories' => $categories,
 ]);
 
 print($page);

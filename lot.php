@@ -33,12 +33,12 @@ $lot_content = getTemplate('lot.php', ['goods' => $lot, 'timeLeft' => $timeLeft]
 $page = getTemplate(
   'layout.php',
   [
-    'title' => 'Главная',
+    'title' => $lot['lot-name'],
     'is_auth' => $is_auth,
     'user_name' => $user_name,
     'user_avatar' => $user_avatar,
     'content' => $lot_content,
-    'category' => $category,
+    'categories' => $categories,
   ]
 );
 

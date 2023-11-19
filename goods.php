@@ -1,14 +1,14 @@
 <?php 
 
-$category = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
+$categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 
 $goods = [
     [
         'name' => '2014 Rossignol District Snowboard',
         'category' => 'Доски и лыжи',
-        'price' => 10999,
-        'img' => 'img/lot-1.jpg',
-        'desc' => 'Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив снег мощным щелчком и четкими дугами. 
+        'lot-rate' => 10999,
+        'lot-image' => 'img/lot-1.jpg',
+        'message' => 'Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив снег мощным щелчком и четкими дугами. 
         Стекловолокно Bi-Ax, уложенное в двух направлениях, наделяет этот снаряд
         отличной гибкостью и отзывчивостью, а симметричная геометрия в сочетании с классическим прогибом кэмбер
         позволит уверенно держать высокие скорости. А если к концу катального дня сил совсем не останется,
@@ -16,39 +16,39 @@ $goods = [
         равнодушным.',
     ],
     [
-        'name' => 'DC Ply Mens 2016/2017 Snowboard',
+        'lot-name' => 'DC Ply Mens 2016/2017 Snowboard',
         'category' => 'Доски и лыжи',
-        'price' => 159999,
-        'img' => 'img/lot-2.jpg',
-        'desc' => null,
+        'lot-rate' => 159999,
+        'lot-image' => 'img/lot-2.jpg',
+        'message' => null,
     ],
     [
-        'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+        'lot-name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
         'category' => 'Крепления',
-        'price' => 8000,
-        'img' => 'img/lot-3.jpg',
-        'desc' => null,
+        'lot-rate' => 8000,
+        'lot-image' => 'img/lot-3.jpg',
+        'message' => null,
     ],
     [
-        'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'lot-name' => 'Ботинки для сноуборда DC Mutiny Charocal',
         'category' => 'Ботинки',
-        'price' => 10999,
-        'img' => 'img/lot-4.jpg',
-        'desc' => null,
+        'lot-rate' => 10999,
+        'lot-image' => 'img/lot-4.jpg',
+        'message' => null,
     ],
     [
-        'name' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'lot-name' => 'Куртка для сноуборда DC Mutiny Charocal',
         'category' => 'Одежда',
-        'price' => 7500,
-        'img' => 'img/lot-5.jpg',
-        'desc' => null,
+        'lot-rate' => 7500,
+        'lot-image' => 'img/lot-5.jpg',
+        'message' => null,
     ],
     [
-        'name' => 'Маска Oakley Canopy',
+        'lot-name' => 'Маска Oakley Canopy',
         'category' => 'Разное',
-        'price' => 7500,
-        'img' => 'img/lot-6.jpg',
-        'desc' => null,
+        'lot-rate' => 7500,
+        'lot-image' => 'img/lot-6.jpg',
+        'message' => null,
     ],
 
 ];

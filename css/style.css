@@ -219,6 +219,7 @@ h2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
 }
 
 .user-menu__image {
