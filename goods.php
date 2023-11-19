@@ -4,7 +4,7 @@ $categories = ['Доски и лыжи', 'Крепления', 'Ботинки',
 
 $goods = [
     [
-        'name' => '2014 Rossignol District Snowboard',
+        'lot-name' => '2014 Rossignol District Snowboard',
         'category' => 'Доски и лыжи',
         'lot-rate' => 10999,
         'lot-image' => 'img/lot-1.jpg',

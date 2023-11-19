@@ -6,6 +6,7 @@ $is_auth = (bool) rand(0, 1);
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 
+
 // передан ли параметр lot_id через GET запрос
 if (isset($_GET['lot_id'])) {
   // получаем идентификатор лота из GET запроса
@@ -24,10 +25,33 @@ if (isset($_GET['lot_id'])) {
     exit();
   }
 } else {
-  
+
   echo "Идентификатор лота не передан в параметрах.";
 }
 
+
+// инициализация массива данных или загрузка из существующего cookie
+if (isset($_COOKIE['viewed'])) {
+  $history = json_decode($_COOKIE['viewed'], true);
+} else {
+  $history = [];
+}
+// можно сократить с помощью тернарных операторов >> $history = isset($_COOKIE['viewed']) ? json_decode($_COOKIE['viewed'], true) : [];  >> пора практиковать
+
+// получение значения get параметра
+if (isset($_GET['lot_id'])) {
+  $lotId = $_GET['lot_id'];
+} else {
+  $lotId = null;
+}
+
+// проверка на уникальность и добавление в массив
+if ($lotId !== null && !in_array($lotId, $history)) {
+  $history[] = $lotId;
+}
+
+// передаем cookie
+setcookie('viewed', json_encode($history), time() + (3600 * 24 * 30), '/');
 
 $lot_content = getTemplate('lot.php', ['goods' => $lot, 'timeLeft' => $timeLeft],);
 $page = getTemplate(
