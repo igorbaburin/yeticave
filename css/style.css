@@ -86,7 +86,7 @@ h2 {
 
 .button {
   display: block;
-  padding: 9px 32px;
+  padding: 9px 25px;
   background-color: #45abde;
   color: #ffffff;
   text-align: center;
@@ -243,6 +243,10 @@ h2 {
 .user-menu__logged p {
   font-weight: 700;
   margin: 0;
+}
+
+.user-menu__logged .user-menu__logout a {
+  color: #d14444;
 }
 
 .user-menu__logged a {
@@ -913,6 +917,22 @@ input:invalid .form__error{
 
 .form__item--uploaded .preview {
   display: block;
+}
+
+.form__access--denied {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form__access--denied img {
+  width: 300px;
+}
+
+.form__access--denied p a {
+  color: #61c3f4;
+  text-decoration: underline;
 }
 
 /* Страница лота */

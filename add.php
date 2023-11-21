@@ -2,9 +2,8 @@
 require_once('basic.php');
 require_once('function.php');
 require_once('data.php');
+require_once ('basic.php');
 
-$is_auth = (bool) rand(0, 1);
-$user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 
 $result = [
@@ -102,15 +101,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-$add_content = getTemplate('add.php', ['goods' => $lot, 'timeLeft' => $timeLeft, 'categories' => $categories, 'result' => $result, 'errors' => $errors],);
+$content = getTemplate('add.php', ['goods' => $lot, 'timeLeft' => $timeLeft, 'categories' => $categories, 'result' => $result, 'errors' => $errors],);
 $page = getTemplate(
     'layout.php',
     [
         'title' => 'Добавить лот',
-        'is_auth' => $is_auth,
-        'user_name' => $user_name,
         'user_avatar' => $user_avatar,
-        'content' => $add_content,
+        'content' => $content,
         'categories' => $categories,
     ]
 );

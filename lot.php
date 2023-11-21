@@ -1,9 +1,8 @@
 <?php
 require_once('function.php');
 require_once('data.php');
+require_once ('basic.php');
 
-$is_auth = (bool) rand(0, 1);
-$user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 
 
@@ -53,15 +52,13 @@ if ($lotId !== null && !in_array($lotId, $history)) {
 // передаем cookie
 setcookie('viewed', json_encode($history), time() + (3600 * 24 * 30), '/');
 
-$lot_content = getTemplate('lot.php', ['goods' => $lot, 'timeLeft' => $timeLeft],);
+$content = getTemplate('lot.php', ['goods' => $lot, 'timeLeft' => $timeLeft],);
 $page = getTemplate(
   'layout.php',
   [
     'title' => $lot['lot-name'],
-    'is_auth' => $is_auth,
-    'user_name' => $user_name,
     'user_avatar' => $user_avatar,
-    'content' => $lot_content,
+    'content' => $content,
     'categories' => $categories,
   ]
 );

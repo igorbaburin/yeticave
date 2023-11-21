@@ -8,3 +8,7 @@ define('TEMPLATE_PATH', ROOT. '/templates/');
 define('IMG_PATH', ROOT. '/img/');
 // каталог загрузки
 define('USER_UPLOAD_DIR', '/upload/user_lots/');
+
+
+// работа с сессиями
+session_start();
