@@ -35,7 +35,7 @@
             <img src="<?= $user_avatar ?>" width="40" height="40" alt="Пользователь"> 
         </div> 
         <div class="user-menu__logged"> 
-            <p>Привет, <?= strip_tags($_SESSION['user']['name']) ?>!</p>
+            <p>Привет, <?= strip_tags($_SESSION['user']['user_name']) ?>!</p>
             <p class="user-menu__logout"><a href="/logout.php">Выход</a></p>
         </div>
         <?php endif; ?>

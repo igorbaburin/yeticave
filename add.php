@@ -9,7 +9,7 @@ $user_avatar = 'img/user.jpg';
 $result = [
     'lot-name' => '',
     'category' => '',
-    'message' => '',
+    'lot-message' => '',
     'lot-rate' => '',
     'lot-step' => '',
     'lot-date' => ''
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors["category"] = "Выберите категорию";
     }
 
-    if (empty($_POST["message"])) {
-        $errors["message"] = "Введите описание лота";
+    if (empty($_POST["lot-message"])) {
+        $errors["lot-message"] = "Введите описание лота";
     }
 
     if (empty($_POST["lot-rate"])) {
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($errors)) {
         $result['lot-name'] = $_POST['lot-name'] ?? '';
         $result['category'] = $_POST['category'] ?? '';
-        $result['message'] = $_POST['message'] ?? '';
+        $result['lot-message'] = $_POST['lot-message'] ?? '';
         $result['lot-rate'] = $_POST['lot-rate'] ?? '';
         $result['lot-step'] = $_POST['lot-step'] ?? '';
         $result['lot-date'] = $_POST['lot-date'] ?? '';

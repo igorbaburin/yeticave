@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!count($errors) and $user = searchUserByEmail($_POST['email'], $users)) {
-        if (password_verify($_POST['password'], $user['password'])) {
+        if (password_verify($_POST['password'], $user['user_password'])) {
             $_SESSION['user'] = $user;
         } else {
             $errors['password'] = "Неправильный пароль!";

@@ -47,7 +47,7 @@ $timeLeft = timeUntilMidnight();
 function searchUserByEmail($email, $users) {
     $result = null;
     foreach($users as $user) {
-        if($user['email'] == $email) {
+        if($user['user_email'] == $email) {
             $result = $user;
             break;
         }

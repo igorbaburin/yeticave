@@ -19,10 +19,10 @@
         <span class="form__error"><?= $errors['category'] ?? ''; ?></span>
       </div>
     </div>
-    <div class="form__item form__item--wide <?= isset($errors['message']) ? 'form__item--invalid' : ''; ?>">
+    <div class="form__item form__item--wide <?= isset($errors['lot-message']) ? 'form__item--invalid' : ''; ?>">
       <label for="message">Описание</label>
-      <textarea id="message" name="message" placeholder="Напишите описание лота"><?= $result['message'] ?></textarea>
-      <span class="form__error"><?= $errors['message'] ?? ''; ?></span>
+      <textarea id="lot-message" name="lot-message" placeholder="Напишите описание лота"><?= $result['lot-message'] ?></textarea>
+      <span class="form__error"><?= $errors['lot-message'] ?? ''; ?></span>
     </div>
     <div class="form__item form__item--file"> <!-- form__item--uploaded -->
       <label>Изображение (макс. 2Мб)</label>
