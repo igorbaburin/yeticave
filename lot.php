@@ -1,20 +1,29 @@
 <?php
 require_once('function.php');
 require_once('data.php');
-require_once ('basic.php');
+require_once('basic.php');
 
 $user_avatar = 'img/user.jpg';
 
+// !!! - mysqli_fetch_all - возвращает массив, значит данные в нем индексируется так же с 0 [запомнить]
 
 // передан ли параметр lot_id через GET запрос
 if (isset($_GET['lot_id'])) {
   // получаем идентификатор лота из GET запроса
   $lotId = $_GET['lot_id'];
 
+  // параметризированный запрос чтобы избежать SQL-инъекций
+  $sqlGetLot = "SELECT * FROM goods WHERE id = ?";
+  $stmt = mysqli_prepare($con, $sqlGetLot);
+  mysqli_stmt_bind_param($stmt, "i", $lotId);
+  mysqli_stmt_execute($stmt);
+
+  $resultGetLot = mysqli_stmt_get_result($stmt);
+
   // проверяем, существует ли лот с таким идентификатором в массиве
-  if (isset($goods[$lotId])) {
+  if ($resultGetLot) {
     // получаем информацию о лоте
-    $lot = $goods[$lotId];
+    $lot = mysqli_fetch_assoc($resultGetLot);
     // $lot содержит информацию о выбранном лоте
 
   } else {
@@ -24,10 +33,8 @@ if (isset($_GET['lot_id'])) {
     exit();
   }
 } else {
-
   echo "Идентификатор лота не передан в параметрах.";
 }
-
 
 // инициализация массива данных или загрузка из существующего cookie
 if (isset($_COOKIE['viewed'])) {
@@ -52,7 +59,7 @@ if ($lotId !== null && !in_array($lotId, $history)) {
 // передаем cookie
 setcookie('viewed', json_encode($history), time() + (3600 * 24 * 30), '/');
 
-$content = getTemplate('lot.php', ['goods' => $lot, 'timeLeft' => $timeLeft],);
+$content = getTemplate('lot.php', ['lot' => $lot, 'timeLeft' => $timeLeft],);
 $page = getTemplate(
   'layout.php',
   [

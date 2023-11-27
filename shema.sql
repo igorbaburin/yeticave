@@ -15,6 +15,7 @@ CREATE TABLE users (
 CREATE TABLE categories (
     PRIMARY KEY (id),
     id INT AUTO_INCREMENT,
+    code CHAR(64),
     category CHAR(64) UNIQUE
 );
 
@@ -22,8 +23,12 @@ CREATE TABLE goods (
     PRIMARY KEY (id),
     id INT AUTO_INCREMENT UNIQUE,
     lot_name CHAR(255),
+    create_date DATETIME,
+    final_date DATETIME,
     category CHAR(64),
+    category_code CHAR(64),
     lot_rate INT,
+    lot_step INT,
     lot_image CHAR(255),
     lot_message TEXT
 );
@@ -31,6 +36,7 @@ CREATE TABLE goods (
 CREATE TABLE bets (
     PRIMARY KEY (id),
     id INT AUTO_INCREMENT,
+    lot_id    INTEGER,
     b_username CHAR(64) UNIQUE,
     b_price INT,
     b_date DATETIME

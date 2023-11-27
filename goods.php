@@ -50,10 +50,5 @@ $goods = [
         'lot-image' => 'img/lot-6.jpg',
         'lot-message' => null,
     ],
-
 ];
-
-foreach ($goods as $index => $lot) {
-    $lotId = $index; // Идентификатор лота равен его индексу в массиве
-}
 

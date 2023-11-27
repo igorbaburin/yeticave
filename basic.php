@@ -1,5 +1,8 @@
 <?php
 
+$con = mysqli_connect("127.0.0.1", "root", "", "yeticave");
+mysqli_set_charset($con, "utf8");
+
 // корень сайта
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 // путь до каталога шаблонов
