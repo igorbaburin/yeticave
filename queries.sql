@@ -1,16 +1,16 @@
 -- Категории
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'boards', 'Доски и лыжи');
+    VALUES (null, 1, 'Доски и лыжи');
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'attachment', 'Крепления');
+    VALUES (null, 2, 'Крепления');
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'boots', 'Ботинки');
+    VALUES (null, 3, 'Ботинки');
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'clothing', 'Одежда');
+    VALUES (null, 4, 'Одежда');
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'tools', 'Инструменты');
+    VALUES (null, 5, 'Инструменты');
 INSERT INTO categories (id, code, category)
-    VALUES (null, 'other', 'Разное');
+    VALUES (null, 6, 'Разное');
 
 -- Пользователи
 INSERT INTO users (id, user_email, user_name, user_password)
